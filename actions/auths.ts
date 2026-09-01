@@ -8,53 +8,53 @@ import { signIn } from "@/lib/auth";
 import {redirect} from "next/navigation";
 import {signOut} from  "@/lib/auth"  ;
 import { resend } from "@/lib/resend";
+import { revalidatePath } from "next/cache";
+import {auth} from  "@/lib/auth";
 import { error } from "console";
 
-export async function registerUser(formData:FormData){
-    const surname = formData.get("surname")?.toString().trim();
-    const  names = formData.get("names")?.toString().trim();
-    const email = formData.get("email")?.toString().trim();
-    const password = formData.get("password")?.toString().trim();
-    const confirmpassword = formData.get("confirm password")?.toString().trim();
-    
-    if (!surname || !names || !email || !password || !confirmpassword) {
-       
-        return;
-    }
-    
-    if (password.length <8){
-       
-        return;
-    }
-    if ( password !==confirmpassword){
-       
-        return;
-    }
-     const existingUser = await prisma.user.findUnique({
-        where:{
-            email,
-        },
-    });
-    if (existingUser){
-       
-        return
-    }
-        const hashedPassword = await bcrypt.hash(password, 10);
-        
 
-        await prisma.user.create({
-            data :{
-        surname,
-        names,
-        email,
-        password:hashedPassword,
-            }
-        })
-      
+export async function registerUser(
+  prevState: { error: string } | undefined,
+  formData: FormData
+) {
+  const surname = formData.get("surname")?.toString().trim();
+  const names = formData.get("names")?.toString().trim();
+  const email = formData.get("email")?.toString().trim();
+  const password = formData.get("password")?.toString().trim();
+  const confirmPassword = formData.get("confirmPassword")?.toString().trim();
 
-    redirect("/login");
-    
-   
+  if (!surname || !names || !email || !password || !confirmPassword) {
+    return { error: "All fields are required" };
+  }
+
+  if (password.length < 8) {
+    return { error: "Password must be at least 8 characters" };
+  }
+
+  if (password !== confirmPassword) {
+    return { error: "Passwords do not match" };
+  }
+
+  const existingUser = await prisma.user.findUnique({
+    where: { email },
+  });
+
+  if (existingUser) {
+    return { error: "An account with this email already exists" };
+  }
+
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  await prisma.user.create({
+    data: {
+      surname,
+      names,
+      email,
+      password: hashedPassword,
+    },
+  });
+
+  redirect("/login");
 }
 
 export async function loginUser(
@@ -96,7 +96,7 @@ export async function forgotPassword(
 
     if(!email) {
         return{
-            message: "reset link sent",
+            message: "",
             error: "Please enter your email address."
         };
     }
@@ -132,7 +132,7 @@ export async function forgotPassword(
    await resend.emails.send({
     from: "onboarding@resend.dev",
     to: email,
-    subject: "reset your password",
+    subject: "Reset your password",
     html:`
     <h2> Password Reset</h2>
 
@@ -146,7 +146,7 @@ export async function forgotPassword(
    });
    return {
     message:
-    "if an account exis  with this email , a password  reset link  has been sent .",
+    " a password  reset link  has been sent .",
     error: "",
    }
 }
@@ -226,4 +226,41 @@ export async function resetPassword(
      ])
      redirect ("/login")
 
+}
+
+export async function updateProfile(
+    prevState: {
+        success?: string;
+        error?: string;
+    },
+    formData:FormData
+
+) {
+    const session = await auth()
+    if (!session?.user?.email){
+        throw new Error("unauthorized");
+    }
+   
+    const name = formData.get("name")?.toString().trim();
+    const email = formData.get("email")?.toString().trim()
+    const contact = formData.get("contact")?.toString().trim()
+     if (!name || !email){
+        return {
+            error: "Name and email are required"
+        };
+    }
+    await prisma.user.update({
+        where: {
+            id: session.user.id
+        },
+        data: {
+            names:name,
+            email,
+            contact,
+        }
+    })
+    revalidatePath("/profile");
+    return {
+        success: "profile updated successfully"
+    }
 }

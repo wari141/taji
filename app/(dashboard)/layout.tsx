@@ -1,11 +1,16 @@
-export default function AuthLayout({
+import { auth } from "@/lib/auth";
+import PageWrapper from "../components/Layout/PageWrapper";
+
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth();
+
   return (
-    <main className="min-h-screen flex items-center justify-center">
+    <PageWrapper user={session?.user}>
       {children}
-    </main>
+    </PageWrapper>
   );
 }

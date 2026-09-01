@@ -59,6 +59,9 @@ import bcrypt from "bcrypt";
   async jwt({ token, user }) {
     if (user) {
       token.sub = user.id;
+      token.email = user.email;
+      token.name =user.name
+      token.picture = user.image;
     }
     return token;
   },
@@ -66,6 +69,9 @@ import bcrypt from "bcrypt";
   async session({ session, token }) {
     if (session.user) {
       session.user.id = token.sub!;
+      session.user.email = token.email as string;
+      session.user.name = token.name as string;
+      session.user.image = token.picture as string | null
     }
     return session;
   },
