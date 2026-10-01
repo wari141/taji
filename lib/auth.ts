@@ -1,30 +1,30 @@
-import { PrismaAdapter } from "@auth/prisma-adapter";
+import {PrismaAdapter} from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
- import Credentials from "next-auth/providers/credentials";
-import { prisma } from "./prisma";
+import Credentials from "next-auth/providers/credentials";
+import {prisma} from "./prisma";
 import bcrypt from "bcrypt";
 
- export const {handlers, signIn, signOut, auth} = NextAuth({
+export const {handlers, signIn, signOut, auth} = NextAuth({
+    trustHost: true,
+    adapter: PrismaAdapter(prisma),
 
-    adapter:PrismaAdapter(prisma),
-    
 
-    session:{
-        strategy:"jwt",
+    session: {
+        strategy: "jwt",
     },
 
-    providers:[
+    providers: [
         Credentials({
-            credentials:{
-                email:{},
-                password:{},
+            credentials: {
+                email: {},
+                password: {},
             },
-            async authorize(credentials){
+            async authorize(credentials) {
                 const email = credentials.email as string;
-                const password =  credentials.password as string;
-                
+                const password = credentials.password as string;
 
-                if (!email || !password){
+
+                if (!email || !password) {
                     return null;
                 }
 
@@ -33,17 +33,17 @@ import bcrypt from "bcrypt";
                         email,
                     },
                 });
-                
+
                 if (!user) {
-                     
+
                     return null;
                 }
                 const passwordMatch = await bcrypt.compare(
                     password,
                     user.password
                 );
-              
-                if (!passwordMatch){
+
+                if (!passwordMatch) {
                     return null
                 }
                 return {
@@ -56,24 +56,24 @@ import bcrypt from "bcrypt";
         }),
     ],
     callbacks: {
-  async jwt({ token, user }) {
-    if (user) {
-      token.sub = user.id;
-      token.email = user.email;
-      token.name =user.name
-      token.picture = user.image;
-    }
-    return token;
-  },
+        async jwt({token, user}) {
+            if (user) {
+                token.sub = user.id;
+                token.email = user.email;
+                token.name = user.name
+                token.picture = user.image;
+            }
+            return token;
+        },
 
-  async session({ session, token }) {
-    if (session.user) {
-      session.user.id = token.sub!;
-      session.user.email = token.email as string;
-      session.user.name = token.name as string;
-      session.user.image = token.picture as string | null
-    }
-    return session;
-  },
-},
- });
+        async session({session, token}) {
+            if (session.user) {
+                session.user.id = token.sub!;
+                session.user.email = token.email as string;
+                session.user.name = token.name as string;
+                session.user.image = token.picture as string | null
+            }
+            return session;
+        },
+    },
+});
