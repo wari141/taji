@@ -1,5 +1,3 @@
 export default function Loading() {
-
-
-   // return <LoadingSkeleton />
+    return <div className="p-8 text-ink-soft">Loading...</div>;
 }

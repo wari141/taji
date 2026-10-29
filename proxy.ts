@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export default auth((request) => {
   const isLoggedIn = !!request.auth;
-  const isDashboard = request.nextUrl.pathname.startsWith("/dashboard");
+  const isDashboard = request.nextUrl.pathname.startsWith("/home");
 
   if (isDashboard && !isLoggedIn) {
     return NextResponse.redirect(
@@ -15,5 +15,5 @@ export default auth((request) => {
 });
 
 export const config = {
-  matcher: ["/dashboard/:path*"],
+  matcher: ["/home/:path*"],
 };

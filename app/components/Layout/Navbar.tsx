@@ -1,115 +1,123 @@
 'use client'
 
-import {Search, Bell, LogOut, User, Menu, X, Scissors, CalendarIcon, House, Image, Clock3, } from "lucide-react";
+import {
+    Search,
+    Bell,
+    LogOut,
+    User,
+    Menu,
+    X,
+    Scissors,
+    CalendarIcon,
+    House,
+    Image as ImageIcon,
+    Clock3,
+} from "lucide-react";
 import Link from "next/link";
-import {usePathname} from "next/navigation";
-import {useState} from "react";
-import {logoutUser} from "@/actions/auths";
+
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { logoutUser } from "@/actions/auths";
 
 type NavbarProps = {
     user?: {
         name?: string | null;
         image?: string | null;
         email?: string | null;
-    }
-}
+    };
+};
+
 const navLinks = [
-    {
-        name: "Home", href: "/", Icon: House
-    },
-    {
-        name: "Services", href: "/services", Icon: Scissors
-    },
-    {
-        name: "My bookings", href: "/bookings", Icon: CalendarIcon
-    },
-    {
-        name: "Gallery", href: "/gallery", Icon: Image
-    },
-    {name: "Booking History", href: "/booking-history", Icon: Clock3
-    },
+    { name: "Home", href: "/home", Icon: House },
+    { name: "Services", href: "/services", Icon: Scissors },
+    { name: "My bookings", href: "/bookings", Icon: CalendarIcon },
+    { name: "Gallery", href: "/gallery", Icon: ImageIcon },
+    { name: "Booking History", href: "/booking-history", Icon: Clock3 },
+];
 
+export default function Navbar({ user }: NavbarProps) {
+    const [profileOpen, setProfileOpen] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const pathname = usePathname();
 
-]
+    // later: load the real count from the database
+    const unreadCount = 0;
 
-export default function Navbar({
-                                   user,
-                               }:
-                               NavbarProps
-) {
-    const [profileOpen] = useState(false)
     const initials =
         user?.name
             ?.split(" ")
             .map((n: string) => n[0])
             .join("")
             .toUpperCase() || "G";
-    const pathname = usePathname();
-
-    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     return (
-        <header className="border-b border-[#304238] bg-[#0D1511] px-3 md:px-6 py-4">
+        <header className="border-b border-line bg-cream px-3 py-4 md:px-6">
             <div className="mx-auto flex max-w-7xl items-center justify-between">
+                {/* Brand + mobile menu button */}
                 <div className="flex items-center gap-3">
                     <button
+                        type="button"
                         onClick={() => setSidebarOpen(true)}
-                        className="md:hidden text-[#F5F7F5]">
-
-                        <Menu className="h-6 w-6"/>
-
+                        aria-label="Open navigation menu"
+                        className="text-ink md:hidden"
+                    >
+                        <Menu className="h-6 w-6" />
                     </button>
 
-                    <span className="text-sm font-bold uppercase tracking-wide text-[#f5f7f5]">
-                        Taji Curls <br/>
-                        Beauty & Spa
-                        </span>
+                    <span className="text-sm font-bold uppercase tracking-wide text-ink">
+                        Gee Curly <br />
+                        Beauty &amp; Spa
+                    </span>
                 </div>
-                <nav className="md:flex hidden items-center gap-6">
-                    {navLinks.map((link) => {
-                        const Icon = link.Icon;
-                        return (
+
+                {/* Desktop links */}
+                <nav className="hidden items-center gap-6 md:flex">
+                    {navLinks.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
                             className={`transition-colors ${
                                 pathname === link.href
-                                    ? "border-b-2 border-[#7a9b80] pb-1 font-bold text-[#7a9b80]"
-                                    : "text-[#a8b5ac] hover:text-[#7a9b80]"
+                                    ? "border-b-2 border-brand pb-1 font-bold text-brand"
+                                    : "text-ink-soft hover:text-brand"
                             }`}
                         >
-
-                            <Icon className=" hidden h-2 w-2"/>
-                           <span>{link.name}</span>
-
-
+                            {link.name}
                         </Link>
-                        ) })}
+                    ))}
                 </nav>
+
+                {/* Right side: search, bell, avatar */}
                 <div className="flex items-center gap-4">
                     <div className="relative hidden xl:block">
-                        <Search
-                            className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#718078]"/>
+                        <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#8C7160]" />
                         <input
                             placeholder="Search services..."
                             type="text"
-                            className="w-56 rounded-full border border-[#304238] bg-transparent py-2 pl-9 text-sm text-[#f5f7f5] outline-none placeholder:text-[#718078] focus:border-[#7a9b80]"/>
+                            className="w-56 rounded-full border border-line bg-transparent py-2 pl-9 text-sm text-ink outline-none placeholder:text-[#8C7160] focus:border-brand"
+                        />
                     </div>
+
                     <button
                         type="button"
-                        className="relative
-                    text-[#f5f7f5]">
-                        <Bell className="h-6 w-6"/>
-                        <span
-                            className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#7A9B80] text-[10px] font-semibold text-[#0D1511]"
-                        >
-                            2
-                        </span>
+                        aria-label="Notifications"
+                        className="relative text-ink"
+                    >
+                        <Bell className="h-6 w-6" />
+                        {unreadCount > 0 && (
+                            <span className="absolute -right-1.5 -top-1.5 flex h-4 w-4 items-center justify-center rounded-full bg-brand text-[10px] font-semibold text-white">
+                                {unreadCount}
+                            </span>
+                        )}
                     </button>
+
                     <div className="relative">
-                        <Link
-                            href="/profile"
-                            className="flex items-center gap-2   border-[#304238] px-2 py-1 hover:border-[#7A9B80] transition"
+                        <button
+                            type="button"
+                            onClick={() => setProfileOpen((open) => !open)}
+                            aria-label="Open account menu"
+                            aria-expanded={profileOpen}
+                            className="flex items-center rounded-full border-2 border-transparent transition hover:border-brand"
                         >
                             {user?.image ? (
                                 <img
@@ -118,104 +126,120 @@ export default function Navbar({
                                     className="h-12 w-12 rounded-full object-cover"
                                 />
                             ) : (
-                                <span
-                                    className="flex h-12 w-12 items-center justify-center rounded-full bg-[#7A9B80] text-xs font-semibold text-[#0D1511]">
+                                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brand text-xs font-semibold text-white">
                                     {initials}
                                 </span>
                             )}
+                        </button>
 
-
-                        </Link>
                         {profileOpen && (
-                            <div
-                                className="absolute right-0 mt-3 w-64 overflow-hidden rounded-2xl border border-[#304238] bg-[#16261C] shadow-xl">
-                                <div className="border-b border-[#304238] p-4">
-                                    <p className="font-semibold text-[#F5F7F5]">
-                                        {user?.name || "Guest"}
-                                    </p>
-                                    <p className="text-sm text-[#A8B5AC]">
-                                        {user?.email || "Not signed in"}
-                                    </p>
+                            <>
+                                <div
+                                    className="fixed inset-0 z-30"
+                                    onClick={() => setProfileOpen(false)}
+                                />
+                                <div className="absolute right-0 z-40 mt-3 w-64 overflow-hidden rounded-2xl border border-line bg-white shadow-xl">
+                                    <div className="border-b border-line p-4">
+                                        <p className="font-semibold text-ink">
+                                            {user?.name || "Guest"}
+                                        </p>
+                                        <p className="text-sm text-ink-soft">
+                                            {user?.email || "Not signed in"}
+                                        </p>
+                                    </div>
+
+                                    <Link
+                                        href="/profile"
+                                        onClick={() => setProfileOpen(false)}
+                                        className="flex items-center gap-3 px-4 py-3 text-ink hover:bg-[#FFF0E2]"
+                                    >
+                                        <User className="h-4 w-4" />
+                                        <span>Profile Settings</span>
+                                    </Link>
+
+                                    <div className="border-t border-line p-2">
+                                        <form action={logoutUser}>
+                                            <button
+                                                type="submit"
+                                                className="flex w-full items-center gap-3 rounded-lg px-3 py-3 text-red-500 hover:bg-red-500/10"
+                                            >
+                                                <LogOut className="h-4 w-4" />
+                                                Logout
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
-                                <Link
-                                    href="/profile"
-                                    className="flex items-center gap-3 px-4 py-3 text-[#F5F7F5] hover:bg-[#203128]"
-                                >
-                                    <User className="h-4 w-4"/>
-                                    <span>Profile Settings</span>
-                                </Link>
-                                <div className="border-t border-[#304238] p-2">
-                                    <form action={logoutUser}>
-                                        <button
-                                            type="submit"
-                                            className="flex w-full items-center gap-3 rounded-lg px-3 py-3 text-red-400 hover:bg-red-500/10"
-                                        >
-                                            <LogOut className="h-4 w-4"/>
-                                            Logout
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
+                            </>
                         )}
                     </div>
                 </div>
             </div>
+
+            {/* Mobile side menu */}
             {sidebarOpen && (
                 <>
                     <div
-                        className="fixed inset-0   z-40"
+                        className="fixed inset-0 z-40 bg-ink/45 backdrop-blur-sm"
                         onClick={() => setSidebarOpen(false)}
                     />
-                    <div className="fixed left-0 top-0h-full w-52 h-172 bg-[#16261C] z-50 border-r border-[#304238]">
-                        <div className="flex items-center justify-end pr-5 p-4 border-b border-[#304238]">
+                    <div className="fixed inset-y-0 left-0 z-50 flex h-dvh w-[min(20rem,88vw)] max-w-full flex-col overflow-y-auto border-r border-line bg-white shadow-2xl">
+                        <div className="flex items-center justify-end border-b border-line p-4 pr-5">
                             <button
-
+                                type="button"
                                 onClick={() => setSidebarOpen(false)}
+                                aria-label="Close navigation menu"
                             >
-                                <X className="h-5 w-5 text-[#F5f7f5]"/>
+                                <X className="h-5 w-5 text-brand" />
                             </button>
                         </div>
-                        <nav className="p-4 space-y-2">
-                            {navLinks.map((link) =>{
-                                const Icon = link.Icon
-                                return(
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    onClick={() => setSidebarOpen(false)}
-                                    className="block border  border-[#304238]  rounded-lg px-4 py-3 text-[#F5F7F5] hover:bg-gray-900"
-                                >
-                                    <div className="flex items-center gap-2">
-                                    <Icon className="h-3.5 w-3.5"/>
-                                   <span> {link.name}</span>
-                                    </div>
-                                </Link>
-                            )})}
+
+                        <nav className="space-y-2 p-4">
+                            {navLinks.map((link) => {
+                                const Icon = link.Icon;
+                                const active = pathname === link.href;
+                                return (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={() => setSidebarOpen(false)}
+                                        className={`block rounded-xl border px-4 py-3 transition hover:bg-[#FFF0E2] ${
+                                            active
+                                                ? "border-brand bg-[#FFF0E2] font-semibold text-brand"
+                                                : "border-line text-ink"
+                                        }`}
+                                    >
+                                        <div className="flex items-center gap-2">
+                                            <Icon className="h-4 w-4" />
+                                            <span>{link.name}</span>
+                                        </div>
+                                    </Link>
+                                );
+                            })}
                         </nav>
 
-                        <div className="absolute bottom-4 left-4 right-4 space-y-2">
+                        <div className="mt-auto space-y-2 p-4">
                             <Link
                                 href="/profile"
-                                className="flex items-center gap-3 border border-[#304238] rounded-lg px-4 py-3 text-[#F5F7F5] hover:bg-[#203128]"
+                                onClick={() => setSidebarOpen(false)}
+                                className="flex items-center gap-3 rounded-lg border border-line px-4 py-3 text-ink hover:bg-[#FFF0E2]"
                             >
-                                <User className="h-4 w-4"/>
+                                <User className="h-4 w-4" />
                                 Profile
                             </Link>
 
                             <form action={logoutUser}>
                                 <button
                                     type="submit"
-                                    className="flex w-full items-center border border-[#304238] gap-3 rounded-lg px-4 py-3 text-red-400 hover:bg-red-500/10"
+                                    className="flex w-full items-center gap-3 rounded-lg border border-line px-4 py-3 text-red-500 hover:bg-red-500/10"
                                 >
-                                    <LogOut className="h-4 w-4"/>
+                                    <LogOut className="h-4 w-4" />
                                     Logout
                                 </button>
                             </form>
                         </div>
                     </div>
                 </>
-            )
-            }
+            )}
         </header>
-    )
+    );
 }

@@ -13,13 +13,13 @@ export default function LoginForm() {
 
     return (
         <form action={formAction}
-              className="w-full max-w-md border-[#304238] bg-[#13231C] space-y-4 rounded-2xl border p-6 shadow-2xl">
+              className="w-full max-w-md space-y-4 rounded-2xl border border-[#F2D7C1] bg-white p-5 shadow-xl sm:p-6">
             <div className="mb-8">
-                <h2 className="text-3xl font-bold text-[#F5F754]">
+                <h2 className="text-3xl font-bold text-[#E87522]">
                     Welcome back
                 </h2>
-                <p className="mt-2 text-sm text-[#A8B5AC]">
-                    Login in to your Taji Curls account
+                <p className="mt-2 text-sm text-[#6D5546]">
+                    Login in to your Gee Curly account
                 </p>
             </div>
 
@@ -28,23 +28,23 @@ export default function LoginForm() {
                     {state.error}
                 </p>
             )}
-            <p className="text-2xl ">Email</p>
+            <p className="text-base font-medium sm:text-lg">Email</p>
             <div className="relative ">
-                <Mail className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#718078]"/>
+                <Mail className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#8C7160]"/>
                 <input
                     id="email"
                     type="email"
                     name="email"
                     autoComplete="email"
                     placeholder="Email"
-                    className="w-full border rounded-2xl border-[#333f38] pl-10 pr-4 py-3 text-[#f5f7f5] outline-none transition focus:border-[#7a9b80] focus:ring-1 focus:ring-[#7a9b80] placeholder:text-[#718078] "
+                    className="w-full border rounded-2xl border-[#EED1B9] pl-10 pr-4 py-3 text-[#3D2A20] outline-none transition focus:border-[#E87522] focus:ring-1 focus:ring-[#E87522] placeholder:text-[#8C7160] "
                 />
             </div>
-            <p className="text-2xl">password</p>
+            <p className="text-base font-medium sm:text-lg">password</p>
             <PasswordInput
                 id="password"
                 name="password"
-                placeholder="password"
+                placeholder="Password"
             />
 
             <p className="text-right text-sm">
@@ -56,13 +56,13 @@ export default function LoginForm() {
             <button
                 type="submit"
                 disabled={pending}
-                className="w-40 text-[#0D1511] rounded-2xl bg-[#7A9B80] py-2.5 transition-all hover:bg-[#91B198] hover:shadow-lg hover:shadow-[#7A9B80]/20 active:scale-[0.98]  disabled:opacity-50"
+                className="w-full rounded-2xl bg-[#E87522] py-3 text-[#FFF3E8] transition-all hover:bg-[#C95717] hover:shadow-lg hover:shadow-[#E87522]/20 active:scale-[0.98] disabled:opacity-50 sm:w-40"
             >
                 {pending ? "Logging in..." : "Login"}
             </button>
             <p className="text-sm text-center">
                 Don`t have an account?{" "}
-                <Link href={"/register"} className="font-semibold text-amber-200">
+                <Link href={"/register"} className="font-semibold text-[#D96BA5]">
                     Sign Up
                 </Link>
             </p>

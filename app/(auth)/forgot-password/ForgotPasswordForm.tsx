@@ -2,6 +2,7 @@
 
 import {useActionState} from "react";
 import {forgotPassword} from "@/actions/auths";
+
 import PasswordInput from "@/app/components/ui/PasswordInput";
 import {Mail} from "lucide-react";
 
@@ -11,17 +12,17 @@ export default function ForgotPasswordForm() {
     const [state, formAction, pending] = useActionState(forgotPassword, initialState);
 
     return (
-        <form action={formAction} className="w-96  space-y-4 rounded-lg border border-[#16271e] p-6">
+        <form action={formAction} className="w-full max-w-md space-y-4 rounded-2xl border border-[#F2D7C1] bg-white p-5 shadow-xl sm:p-7">
             <div>
-                <h1 className="text-2xl text-center text-[#8FAF96] tracking-tight uppercase  font-bold">
-                    Taji curls beauty & spa
+                <h1 className="text-2xl text-center text-[#E87522] tracking-tight uppercase  font-bold">
+                    Gee Curly beauty & spa
                 </h1>
-                <p className="text-sm text-center text-[#F5F7F5] mt-2 mb-2.5">
+                <p className="text-sm text-center text-[#3D2A20] mt-2 mb-2.5">
                     Forgot your password?
                 </p>
-                <p className="text-sm text-center text-[#A8B5AC]">
-                    No worries, Enter your email and we`ll
-                    <br/>
+                <p className="text-sm text-center text-[#6D5546]">
+                    No worries. Enter your email and we&apos;ll
+
                     help you reset your password
                 </p>
             </div>
@@ -37,24 +38,24 @@ export default function ForgotPasswordForm() {
                 </p>
             )}
             <div>
-                <label htmlFor="email" className="mb-1 block text-sm text-[#A8B5AC]">
+                <label htmlFor="email" className="mb-1 block text-sm text-[#6D5546]">
                     Your email
                 </label>
                 <div className="relative">
                     <Mail
-                        className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#718078]"/>
+                        className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#8C7160]"/>
                     <input
                         id="email"
                         name="email"
                         type="email"
                         autoComplete="email"
                         placeholder="Email"
-                        className="w-full border rounded-2xl border-[#333f38] pl-10 pr-4 py-3 text-[#f5f7f5] outline-none transition focus:border-[#7a9b80] focus:ring-1 focus:ring-[#7a9b80] placeholder:text-[#718078] "
+                        className="w-full border rounded-2xl border-[#EED1B9] pl-10 pr-4 py-3 text-[#3D2A20] outline-none transition focus:border-[#E87522] focus:ring-1 focus:ring-[#E87522] placeholder:text-[#8C7160] "
                     />
                 </div>
             </div>
             <button
-                className="w-48 rounded-2xl  bg-[#7A9B80] py-2.5 text-white disabled:opacity-50"
+                className="w-full rounded-2xl bg-[#E87522] py-3 text-white transition hover:bg-[#C95717] disabled:opacity-50 sm:w-auto sm:px-8"
                 type="submit"
                 disabled={pending}
             >

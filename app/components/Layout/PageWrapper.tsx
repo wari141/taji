@@ -17,10 +17,10 @@ export default function PageWrapper({
                                         user,
                                     }: PageWrapperProps) {
     return (
-        <div className="min-h-screen bg-[#0d1511]">
+        <div className="flex min-h-[100svh] flex-col bg-[#FFF3E8]">
             <Navbar user={user}/>
 
-            <main className="pt-16">
+            <main className="min-w-0 flex-1">
                 {children}
             </main>
             <Footer />

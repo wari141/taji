@@ -24,17 +24,17 @@ const shortLinks = [
 export default function Footer() {
     const pathName = usePathname()
     return (
-        <footer className="mt-20 border-t border-[#304238]">
+        <footer className="mt-20 border-t border-[#F2D7C1]">
             <div className="mx-auto max-w-6xl px-6 py-12">
                 <div className="grid gap-10 md:grid-cols-4">
                     <div>
-                        <h1 className="text-xl text-[#F5F7F5] font-bold">
-                            TAji CURLS
+                        <h1 className="text-xl text-[#3D2A20] font-bold">
+                            GEE CURLY
                         </h1>
-                        <p className="text-[#A8B5AC] text-sm mt-1">
+                        <p className="text-[#6D5546] text-sm mt-1">
                             Beauty & Spa
                         </p>
-                        <p className="text-[#A8B5AC] text-sm mt-1">
+                        <p className="text-[#6D5546] text-sm mt-1">
                             Premium hair, beauty and spa services tailored for you
                         </p>
                     </div>
@@ -47,8 +47,8 @@ export default function Footer() {
                                     href={link.href}
                                     className={`transition-colors ${
                                     pathName === link.href
-                                    ? "border-b-2 border-[#7a9b80] pb-1 text-[#7a9b80]"
-                                    : "text-[#a8b5ac] hover:text-[#7a9b80]"
+                                    ? "border-b-2 border-[#E87522] pb-1 text-[#E87522]"
+                                    : "text-[#6D5546] hover:text-[#E87522]"
                                     }`}
                                 >
                                     <div className=" flex items-center gap-2 mb-3">
@@ -62,24 +62,24 @@ export default function Footer() {
                     </div>
 
                     <div>
-                        <h3 className="mb-4 font-semibold text-[#F5F7F5]">Contact Us</h3>
-                        <div className="text-sm space-y-3 text-[#A8B5AC]">
-                            <div className="flex items-center gap-2">
-                                <MapPin className="h-4 w-4"/>
+                        <h3 className="mb-4 font-semibold text-[#3D2A20]">Contact Us</h3>
+                        <div className="text-sm space-y-3 text-[#6D5546]">
+                            <div className="flex min-w-0 items-start gap-2 break-words">
+                                <MapPin className="h-4 w-4 shrink-0"/>
                                 Lumumba Drive, Roysambu
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Phone className="h-4 w-4"/>
+                            <div className="flex min-w-0 items-start gap-2 break-words">
+                                <Phone className="h-4 w-4 shrink-0"/>
                                 +254 116 201 844
                             </div>
-                            <div className="flex items-center gap-2">
-                                <Mail className="h-4 w-4"/>
-                                geecurly@gmail.com
+                            <div className="flex min-w-0 items-start gap-2 break-words">
+                                <Mail className="h-4 w-4 shrink-0"/>
+                                <a className="break-all" href="mailto:geecurly@gmail.com">geecurly@gmail.com</a>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <h3 className="font-semibold text-[#F5F7F5]">
+                        <h3 className="font-semibold text-[#3D2A20]">
                             Follow us on
                         </h3>
                         <div>

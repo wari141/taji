@@ -2,8 +2,15 @@
 @import "@heroui/styles";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
+  --background: #FFF3E8;
+  --foreground: #3D2A20;
+  --primary-orange: #E87522;
+  --warm-cream: #FFF3E8;
+  --peach-soft: #FFF0E2;
+  --burnt-orange: #8F3F18;
+  --accent-orange: #E87522;
+  --accent-pink: #D96BA5;
 }
 
 @theme inline {
@@ -13,15 +20,35 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+* { box-sizing: border-box; }
+html { min-width: 320px; background: var(--background); }
 body {
+  min-height: 100%;
+  overflow-x: hidden;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--primary-orange), white 24%);
+  outline-offset: 3px;
+}
+img, video { max-width: 100%; }
+
+@theme {
+  --color-brand: #E87522;
+  --color-brand-dark: #C95717;
+  --color-brand-deep: #8F3F18;
+  --color-gold: #D9892B;
+  --color-accent: #D96BA5;
+
+  --color-cream: #FFF3E8;
+  --color-peach: #FFE8D5;
+  --color-peach-deep: #FFE4CC;
+  --color-line: #F2D7C1;
+
+  --color-ink: #3D2A20;
+  --color-cocoa: #5A301E;
+  --color-ink-soft: #6D5546;
 }

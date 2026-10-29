@@ -12,17 +12,17 @@ export default function RegisterPage() {
 
     return (
         <div
-            className="flex min-h-screen items-center justify-center bg-[#0D1511] px-4 sm:px-6 lg:px-12">
-            <form action={formAction} className="w-96 space-y-4 rounded-lg border p-6">
+            className="flex min-h-[100svh] items-start justify-center bg-[#FFF3E8] px-4 py-6 sm:items-center sm:px-6 sm:py-10 lg:px-12">
+            <form action={formAction} className="w-full max-w-md space-y-4 rounded-2xl border border-[#F2D7C1] bg-white p-5 shadow-xl sm:p-7">
                 <div className="mb-8">
-                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#8FAF96]">
-                        Taji curls beauty & spa
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#E87522]">
+                        Gee Curly beauty & spa
                     </p>
-                    <h1 className="text-3xl font-bold text-[#F5F7F5]">
+                    <h1 className="text-3xl font-bold text-[#3D2A20]">
                         Create your account
                     </h1>
-                    <p className="mt-2 text-sm text-[#A8B5AC]">
-                        Join Taji Curls and start your beauty journey.
+                    <p className="mt-2 text-sm text-[#6D5546]">
+                        Join Gee Curly and start your beauty journey.
                     </p>
                 </div>
 
@@ -33,12 +33,12 @@ export default function RegisterPage() {
                 )}
 
                 <div>
-                    <label htmlFor="surname" className="mb-1 block text-sm text-[#A8B5AC]">
+                    <label htmlFor="surname" className="mb-1 block text-sm text-[#6D5546]">
                         Your surname
                     </label>
                     <div className="relative">
                         <User
-                            className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#718078]"/>
+                            className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#8C7160]"/>
                         <input
                             id="surname"
                             name="surname"
@@ -46,18 +46,18 @@ export default function RegisterPage() {
                             placeholder="Surname"
                             autoComplete="family-name"
 
-                            className="w-full border rounded-2xl border-[#333f38] pl-10 pr-4 py-3 text-[#f5f7f5] outline-none transition focus:border-[#7a9b80] focus:ring-1 focus:ring-[#7a9b80] placeholder:text-[#718078] "
+                            className="w-full border rounded-2xl border-[#EED1B9] pl-10 pr-4 py-3 text-[#3D2A20] outline-none transition focus:border-[#E87522] focus:ring-1 focus:ring-[#E87522] placeholder:text-[#8C7160] "
                         />
                     </div>
                 </div>
 
                 <div>
-                    <label htmlFor="names" className="mb-1 block text-sm text-[#A8B5AC]">
+                    <label htmlFor="names" className="mb-1 block text-sm text-[#6D5546]">
                         Full names
                     </label>
                     <div className="relative">
                         <User
-                            className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#718078]"/>
+                            className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#8C7160]"/>
                         <input
                             id="names"
                             name="names"
@@ -65,31 +65,31 @@ export default function RegisterPage() {
                             autoComplete="given-name"
                             placeholder="Names"
 
-                            className="w-full border rounded-2xl border-[#333f38] pl-10 pr-4 py-3 text-[#f5f7f5] outline-none transition focus:border-[#7a9b80] focus:ring-1 focus:ring-[#7a9b80] placeholder:text-[#718078] "
+                            className="w-full border rounded-2xl border-[#EED1B9] pl-10 pr-4 py-3 text-[#3D2A20] outline-none transition focus:border-[#E87522] focus:ring-1 focus:ring-[#E87522] placeholder:text-[#8C7160] "
                         />
                     </div>
                 </div>
 
                 <div>
-                    <label htmlFor="email" className="mb-1 block text-sm text-[#A8B5AC]">
+                    <label htmlFor="email" className="mb-1 block text-sm text-[#6D5546]">
                         Your email
                     </label>
                     <div className="relative">
                         <Mail
-                            className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#718078]"/>
+                            className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#8C7160]"/>
                         <input
                             id="email"
                             name="email"
                             type="email"
                             autoComplete="email"
                             placeholder="Email"
-                            className="w-full border rounded-2xl border-[#333f38] pl-10 pr-4 py-3 text-[#f5f7f5] outline-none transition focus:border-[#7a9b80] focus:ring-1 focus:ring-[#7a9b80] placeholder:text-[#718078] "
+                            className="w-full border rounded-2xl border-[#EED1B9] pl-10 pr-4 py-3 text-[#3D2A20] outline-none transition focus:border-[#E87522] focus:ring-1 focus:ring-[#E87522] placeholder:text-[#8C7160] "
                         />
                     </div>
                 </div>
 
                 <div>
-                    <label htmlFor="password" className="mb-1 block text-sm text-[#A8B5AC]">
+                    <label htmlFor="password" className="mb-1 block text-sm text-[#6D5546]">
                         Password
                     </label>
                     <PasswordInput
@@ -100,7 +100,7 @@ export default function RegisterPage() {
                 </div>
 
                 <div>
-                    <label htmlFor="confirmPassword" className="mb-1 block text-sm text-[#A8B5AC]">
+                    <label htmlFor="confirmPassword" className="mb-1 block text-sm text-[#6D5546]">
                         Confirm your password
                     </label>
                     <PasswordInput

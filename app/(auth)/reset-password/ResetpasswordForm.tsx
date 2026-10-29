@@ -22,11 +22,11 @@ export default function ResetPasswordForm({
     );
     return (
         <form action={formAction} 
-        className="w-96 max-w-md bg-[#16261c] p-8 shadow-2xl space-y-4 rounded-2xl border-[#304238] border"
+        className="w-full max-w-md space-y-4 rounded-2xl border border-[#F2D7C1] bg-white p-5 shadow-xl sm:p-8"
         >
           <div className="text-sm">
             <h1 className="text-2xl uppercase mb-2 text-center tracking-tight">
-                Taji curls Beauty & spa
+                Gee Curly Beauty & spa
             </h1>
              <p className="text-sm text-center  mt-2 mb-2">
                 Reset your password
@@ -45,14 +45,14 @@ export default function ResetPasswordForm({
                     {state.error}
                 </p>
               )}
-              <label htmlFor="newPassword " className="mb-2 block text-sm font-medium text-[#f5f7f5] ">New Password</label>
+              <label htmlFor="newPassword" className="mb-2 block text-sm font-medium text-[#3D2A20] ">New Password</label>
               <PasswordInput 
-              id="password"
+              id="newPassword"
               name="password"
               placeholder="New password"
               />
 
-              <label htmlFor="confirmPassword" className="mb-2 block text-sm font-medium text-[#f5f7f5]">Confirm Password</label>
+              <label htmlFor="confirmPassword" className="mb-2 block text-sm font-medium text-[#3D2A20]">Confirm Password</label>
               <PasswordInput
               id="confirmPassword"
               name="confirmPassword"
@@ -62,17 +62,17 @@ export default function ResetPasswordForm({
               <button 
               type="submit"
               disabled ={pending}
-              className="w-48 rounded-2xl duration-200 hover:bg-[#91b198] active:scale-[0.98] hover:shadow-lg hover:shadow-[#7a9b80] bg-[#7a9b80] py-2 font-semibold transition-all text-white disabled:opacity-50">
-                {pending ? "updating..." : "Update Password"}
+              className="w-full rounded-2xl duration-200 sm:w-48 hover:bg-[#C95717] active:scale-[0.98] hover:shadow-lg hover:shadow-[#E87522] bg-[#E87522] py-2 font-semibold transition-all text-white disabled:opacity-50">
+                {pending ? "Updating..." : "Update Password"}
 
               </button>
               </div>
-              <div className="pt-2 text-center relative">
-                <ArrowLeft className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#718078]"/>
+              <div className="relative pt-2 text-center">
+                <ArrowLeft className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#8C7160]"/>
         
                     <Link
                     href = "/login"
-                    className="text-sm font-medium text-[#a8b5ac] hover:text-[#91b198]">
+                    className="inline-flex min-h-11 items-center justify-center gap-1 text-sm font-medium text-[#6D5546] hover:text-[#C95717]">
                        
                         Back to Login
                     </Link>

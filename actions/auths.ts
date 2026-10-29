@@ -10,7 +10,6 @@ import {signOut} from  "@/lib/auth"  ;
 import { resend } from "@/lib/resend";
 import { revalidatePath } from "next/cache";
 import {auth} from  "@/lib/auth";
-import { error } from "console";
 
 
 export async function registerUser(
@@ -32,7 +31,7 @@ export async function registerUser(
   }
 
   if (password !== confirmPassword) {
-    return { error: "Passwords do not match" };
+    return { error: "password do not much" };
   }
 
   const existingUser = await prisma.user.findUnique({
@@ -66,7 +65,7 @@ export async function loginUser(
         await signIn("credentials", {
             email: formData.get("email"),
             password: formData.get("password"),
-            redirectTo: "/dashboard"
+            redirectTo: "/home"
 
         }
         );
@@ -111,7 +110,7 @@ export async function forgotPassword(
     if (!user) {
         return{
             message:
-            "If an account exist with this email, a password reset link  has been sent.",
+            " a password  reset link  has been sent .",
             error:"",
         };
     }
