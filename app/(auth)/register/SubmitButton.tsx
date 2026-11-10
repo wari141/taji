@@ -9,7 +9,7 @@ export function SubmitButton() {
         <button
             type="submit"
             disabled={pending}
-            className="w-full text-[#E87522] py-2.5 rounded-full font-semibold transition-all duration-200 hover:bg-[#C95717] hover:shadow-lg active:scale-[0.98] hover:shadow-[#E87522]/20 bg-[#FFF3E8] disabled:cursor-not-allowed disabled:opacity-50"
+            className="w-full bg-[#6A1B82] py-2.5 rounded-full font-semibold text-white transition-all duration-200 hover:bg-[#8E2BA5] hover:shadow-lg active:scale-[0.98] hover:shadow-[#6A1B82]/20 disabled:cursor-not-allowed disabled:opacity-50"
         >
             {pending ? "Creating account..." : "Sign up"}
         </button>

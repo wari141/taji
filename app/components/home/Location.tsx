@@ -13,26 +13,26 @@ export default function Location({
     
     return (
         <section className="px-6 pb-10 md:px-12">
-            <div className="grid overflow-hidden rounded-2xl bg-white shadow-md md:grid-cols-2">
+            <div className="grid overflow-hidden rounded-2xl bg-[#FDF9FF] shadow-md md:grid-cols-2">
                 <div className="flex flex-col justify-center p-6 md:p-8">
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#E87522] ">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#6A1B82] ">
                         Visit Us
                     </p>
                     <h2 className="mt-1 text-2xl font-bold md:text-3xl">
                         Find Us Easily
                     </h2>
-                    <p className="mt-1 text-sm text-[#6D5546]">
+                    <p className="mt-1 text-sm text-[#705A78]">
                         Drop by the salon. We would love to see you.
                     </p>
                     <ul className="mt-5 space-y-3 text-sm">
                         <li className="flex items-center gap-3">
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FFE7D2] text-[#E87522]">
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D8B4E5] text-[#6A1B82]">
                                 <MapPin className="h-4 w-4"/>
                             </span>
                             {address}
                         </li>
                         <li className="flex items-center gap-3">
-                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#FFE7D2] text-[#E87522]">
+                            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#D8B4E5] text-[#6A1B82]">
                                <Phone className="h-4 w-4"/>
                             </span>
                             <a
@@ -47,7 +47,7 @@ export default function Location({
                         target="_blank"
                         rel="noopener noreferrer"
                         href={`https://www.google.com/maps/search/?api=1&query=${query}`}
-                        className="mt-6 inline-flex w-fit gap-2 rounded-full items-center bg-[#E87522] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#C95717]">
+                        className="mt-6 inline-flex w-fit gap-2 rounded-full items-center bg-[#6A1B82] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#8E2BA5]">
                       <Navigation className="h-4 w-4"/>
                         Get Directions
                     </a>

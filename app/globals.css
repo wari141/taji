@@ -3,14 +3,41 @@
 
 :root {
   color-scheme: light;
-  --background: #FFF3E8;
-  --foreground: #3D2A20;
-  --primary-orange: #E87522;
-  --warm-cream: #FFF3E8;
-  --peach-soft: #FFF0E2;
-  --burnt-orange: #8F3F18;
-  --accent-orange: #E87522;
-  --accent-pink: #D96BA5;
+
+  --primary: #6A1B82;
+  --primary-dark: #2B063F;
+  --primary-deep: #4A0D62;
+  --primary-hover: #8E2BA5;
+  --primary-light: #B56BC5;
+
+  --lavender: #D8B4E5;
+  --lavender-bg: #F8F0FA;
+  --soft-white: #FDF9FF;
+
+  --pink: #D96BA5;
+  --pink-light: #E8A5D0;
+  --blush: #F4C6DF;
+  --blush-bg: #FFF5FA;
+
+  --gold: #D6A84F;
+  --gold-light: #F2C66D;
+  --gold-soft: #F8E2AD;
+
+  --text-primary: #32123F;
+  --text-secondary: #705A78;
+  --text-muted: #A08BA8;
+
+  --border: #E8D7ED;
+  --surface: #FFFFFF;
+
+  --success: #22A06B;
+  --warning: #E9A23B;
+  --error: #DC4C5A;
+  --info: #5686D8;
+
+  --background: var(--lavender-bg);
+  --foreground: var(--text-primary);
+  --background-soft: var(--blush-bg);
 }
 
 @theme inline {
@@ -31,24 +58,32 @@ body {
 }
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
 :focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--primary-orange), white 24%);
+  outline: 3px solid color-mix(in srgb, var(--primary), white 24%);
   outline-offset: 3px;
 }
 img, video { max-width: 100%; }
 
 @theme {
-  --color-brand: #E87522;
-  --color-brand-dark: #C95717;
-  --color-brand-deep: #8F3F18;
-  --color-gold: #D9892B;
-  --color-accent: #D96BA5;
+  --color-brand: var(--primary);
+  --color-brand-dark: var(--primary-hover);
+  --color-brand-deep: var(--primary-dark);
+  --color-gold: var(--gold);
+  --color-accent: var(--pink);
+  --color-lavender: var(--lavender);
+  --color-lavender-bg: var(--lavender-bg);
+  --color-blush: var(--blush);
+  --color-blush-bg: var(--blush-bg);
 
-  --color-cream: #FFF3E8;
-  --color-peach: #FFE8D5;
-  --color-peach-deep: #FFE4CC;
-  --color-line: #F2D7C1;
+  --color-cream: var(--lavender-bg);
+  --color-peach: var(--blush-bg);
+  --color-peach-deep: var(--blush);
+  --color-line: var(--border);
 
-  --color-ink: #3D2A20;
-  --color-cocoa: #5A301E;
-  --color-ink-soft: #6D5546;
+  --color-ink: var(--text-primary);
+  --color-cocoa: var(--text-secondary);
+  --color-ink-soft: var(--text-secondary);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
 }

@@ -43,7 +43,7 @@ export default function GetInspired({
 
             <div className="relative flex min-w-0 flex-col gap-6 md:flex-row md:items-center md:gap-8">
                 <div className="w-full md:w-60 md:shrink-0">
-                    <p className="inline-block rounded-full bg-white/75 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-dark">
+                    <p className="inline-block rounded-full bg-[#FDF9FF]/75 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-dark">
                         Popular Hairstyles
                     </p>
                     <h2 className="mt-3 text-3xl font-bold md:text-4xl">Get Inspired</h2>
@@ -52,7 +52,7 @@ export default function GetInspired({
                     </p>
                     <Link
                         href="/gallery"
-                        className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#E87522] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-dark focus-visible:outline-white"
+                        className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#6A1B82] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-dark focus-visible:outline-white"
                     >
                         View gallery <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Link>
@@ -66,7 +66,7 @@ export default function GetInspired({
                                 type="button"
                                 onClick={() => scrollByCards(-1)}
                                 aria-label="Show previous hairstyles"
-                                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/80 text-brand-deep transition hover:bg-white focus-visible:outline-brand"
+                                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-[#FDF9FF]/80 text-brand-deep transition hover:bg-[#FDF9FF] focus-visible:outline-brand"
                             >
                                 <ChevronLeft className="h-5 w-5" aria-hidden="true" />
                             </button>
@@ -74,7 +74,7 @@ export default function GetInspired({
                                 type="button"
                                 onClick={() => scrollByCards(1)}
                                 aria-label="Show more hairstyles"
-                                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/80 text-brand-deep transition hover:bg-white focus-visible:outline-brand"
+                                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-[#FDF9FF]/80 text-brand-deep transition hover:bg-[#FDF9FF] focus-visible:outline-brand"
                             >
                                 <ChevronRight className="h-5 w-5" aria-hidden="true" />
                             </button>

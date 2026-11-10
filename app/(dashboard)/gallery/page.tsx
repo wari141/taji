@@ -1,7 +1,7 @@
 import {Button} from "@heroui/react";
 
 export default function Gallery(){
-    return <div className="">
+    return <div className="min-h-screen bg-[#F8F0FA] p-6 text-[#32123F]">
         <p>our Gallery
 
         </p>

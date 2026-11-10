@@ -4,7 +4,7 @@ import type { Service } from "@/lib/services-data";
 export default function ServicesGrid({ services }: { services: Service[] }) {
     if (services.length === 0) {
         return (
-            <p className="rounded-2xl border border-[#F2D7C1] bg-white p-8 text-center text-[#6D5546]">
+            <p className="rounded-2xl border border-[#E8D7ED] bg-[#FDF9FF] p-8 text-center text-[#705A78]">
                 No services found.
             </p>
         );

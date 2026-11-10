@@ -45,11 +45,11 @@ export  default  function SpecialOffers({
      return (
          <section className="px-6 pb-10 md:px-12">
              <div className="">
-                 <p className="text-xs font-semibold uppercase tracking-wider text-[#E87522]">
+                 <p className="text-xs font-semibold uppercase tracking-wider text-[#6A1B82]">
                      Limited time
                  </p>
                  <h2 className="mt-1 text-2xl font-bold md:text-3xl"> Special Offers</h2>
-                 <p className="mt-1 text-sm text-[#6D5546]">
+                 <p className="mt-1 text-sm text-[#2B063F]">
                      Treat yourself and save on our current offers.
                  </p>
 
@@ -59,17 +59,17 @@ export  default  function SpecialOffers({
                      <article
                          key={offer.id}
                          style={{
-                             backgroundImage: `linear-gradient(to top, rgba(48,30,18,.88), rgba(48,30,18,.16)), url(${offer.image})`,
+                             backgroundImage: `linear-gradient(to top, rgba(43,6,63,.88), rgba(43,6,63,.16)), url(${offer.image})`,
 
                          }}
-                         className="relative flex min-h-56 flex-col justify-end overflow-hidden rounded-2xl bg-[#8F3F18] bg-cover bg-center p-5 text-white shadow-md">
-                         <span className="absolute left-4 top-4 flex items-center gap-1 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-[#5A301E]">
+                         className="relative flex min-h-56 flex-col justify-end overflow-hidden rounded-2xl bg-[#4A0D62] bg-cover bg-center p-5 text-white shadow-md">
+                         <span className="absolute left-4 top-4 flex items-center gap-1 rounded-full bg-[#D6A84F] px-3 py-1 text-xs font-bold text-[#2B063F]">
                              <Tag className="h-3 w-3"/>
                              {offer.badge}
                          </span>
                          <h3 className="text-lg font-bold ">{offer.title}</h3>
                          <p className="mt-1 text-sm text-white/85">{offer.description}</p>
-                         <p className="mt-2 text-xs font-semibold text-[#D9892B]">
+                         <p className="mt-2 text-xs font-semibold text-[#F2C66D]">
                              {offer.validUntil}
                          </p>
                          <Link

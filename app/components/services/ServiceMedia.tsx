@@ -40,7 +40,7 @@ export  default function ServiceMedia ({service}:{service:Service}) {
                     className="object-cover "/>
                 {isVideo && (
                     <span className="absolute inset-0 flex items-center justify-center ">
-                        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-[#c95717] ">
+                        <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FDF9FF]/90 text-[#8E2BA5] ">
                             <Play className="h-6 w-6 translate-x-0.5 fill-current"/>
                         </span>
                     </span>
@@ -54,12 +54,12 @@ export  default function ServiceMedia ({service}:{service:Service}) {
                         onClick={() => setOpen(false)}
                         aria-label={service.title}
                         aria-modal={true}
-                        className="fixed  inset-0 z-[100] flex items-center justify-center bg-[#2b1409]/90  p-4">
+                        className="fixed  inset-0 z-[100] flex items-center justify-center bg-[#2B063F]/90  p-4">
                         <button
                             type="button"
                             onClick={() => setOpen(false)}
                             aria-label="Close"
-                            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full  bg-[#c95717] text-white hover:bg-[#a8470f]"
+                            className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full  bg-[#6A1B82] text-white hover:bg-[#8E2BA5]"
                             >
                             <X className="h-6 w-6"/>
                         </button>
@@ -72,14 +72,14 @@ export  default function ServiceMedia ({service}:{service:Service}) {
                                     poster={service.image}
                                     src = {service.video}
                                     onClick={(e) => e.stopPropagation()}
-                                    className="h-auto max-h-[85vh] w-auto max-w-[90vw] rounded-2xl border-4 border-[#FFF3E8] shadow-2xl"
+                                    className="h-auto max-h-[85vh] w-auto max-w-[90vw] rounded-2xl border-4 border-[#F8F0FA] shadow-2xl"
                                     />
                             ): (
                                 <img
                                     src={service.image}
                                     alt={service.title}
                                     onClick={(e) => e.stopPropagation()}
-                                    className="h-auto max-h-[85vh] w-auto max-w-[90vw] rounded-2xl border-4 border-[#FFF3E8] object-contain shadow-2xl"
+                                    className="h-auto max-h-[85vh] w-auto max-w-[90vw] rounded-2xl border-4 border-[#F8F0FA] object-contain shadow-2xl"
                                 />
                             )}
                         </div>

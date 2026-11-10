@@ -38,14 +38,14 @@ export default function ProfileForm({
 
 
     return (
-        <div className="mx-auto w-full max-w-5xl space-y-6 rounded-2xl border border-[#F2D7C1] bg-white p-4 sm:p-6">
-            <div className="mt-2 rounded-2xl border border-[#F2D7C1] px-4 py-4 sm:px-7">
-                <h1 className="text-3xl font-bold text-[#3D2A20]">My profile</h1>
-                <p className="text-[#6D5546]">Manage your account information and preferences</p>
+        <div className="mx-auto w-full max-w-5xl space-y-6 rounded-2xl border border-[#E8D7ED] bg-[#FDF9FF] p-4 sm:p-6">
+            <div className="mt-2 rounded-2xl border border-[#E8D7ED] px-4 py-4 sm:px-7">
+                <h1 className="text-3xl font-bold text-[#2B063F]">My profile</h1>
+                <p className="text-[#705A78]">Manage your account information and preferences</p>
             </div>
             <form
                 action={formAction}
-                className=" rounded-2xl border border-[#F2D7C1] bg-[#FFFFFF] p-6">
+                className=" rounded-2xl border border-[#E8D7ED] bg-[#FDF9FF] p-6">
                 <div className="flex  gap-6 flex-col md:flex-row md:items-centre ">
                     <div>
                         {user.image ? (
@@ -56,23 +56,23 @@ export default function ProfileForm({
                             />
                         ) : (
                             <div
-                                className="flex h-16 w-16 md:w-20 md:h-20 items-center justify-center rounded-full bg-[#E87522] text-xl font-bold text-[#FFF3E8]">
+                                className="flex h-16 w-16 md:w-20 md:h-20 items-center justify-center rounded-full bg-[#6A1B82] text-xl font-bold text-[#F8F0FA]">
                                 {initials}
                             </div>
                         )}
                     </div>
                     <div>
-                        <h4 className="text-2xl text-[#3D2A20] font-bold md:text-2xl">
+                        <h4 className="text-2xl text-[#2B063F] font-bold md:text-2xl">
                             {user.name}
                         </h4>
-                        <p className="break-words text-sm text-[#3D2A20] sm:text-base">
+                        <p className="break-words text-sm text-[#2B063F] sm:text-base">
                             {user.email}
                         </p>
                         <p></p>
 
                     </div>
                 </div>
-                <hr className="mt-15 mb-5 border-[#F2D7C1] "/>
+                <hr className="mt-15 mb-5 border-[#E8D7ED] "/>
                 <div className="">
                     <div className=" mb-3 ">
 
@@ -82,7 +82,7 @@ export default function ProfileForm({
                             name="name"
                             type="text"
                             defaultValue={user.name ?? ""}
-                            className="w-full mt-3  rounded-lg border border-[#F2D7C1] bg-[#FFFFFF] px-3 py-2 text-[#3D2A20] focus:border-[#B95F24] focus:bg-[#FFF0E2]"
+                            className="w-full mt-3  rounded-lg border border-[#E8D7ED] bg-[#FDF9FF] px-3 py-2 text-[#2B063F] focus:border-[#8E2BA5] focus:bg-[#FFF5FA]"
                         />
 
                     </div>
@@ -93,7 +93,7 @@ export default function ProfileForm({
                         <input type="email"
                                name="email"
                                defaultValue={user.email ?? ""}
-                               className="w-full mt-3 rounded-lg border border-[#F2D7C1] bg-[#FFFFFF] px-3 py-2 text-[#3D2A20] focus:bg-[#FFF0E2]"
+                               className="w-full mt-3 rounded-lg border border-[#E8D7ED] bg-[#FDF9FF] px-3 py-2 text-[#2B063F] focus:bg-[#FFF5FA]"
                         />
                     </div>
                     <div className="mb-3">
@@ -105,27 +105,27 @@ export default function ProfileForm({
                             name="contact"
                             id="contact"
                             defaultValue={user.contact ?? ""}
-                            className="w-full mt-3 rounded-lg border px-3 py-2 border-[#F2D7C1] text-[#3D2A20] bg-[#FFFFFF] focus:bg-[#FFF0E2]"
+                            className="w-full mt-3 rounded-lg border px-3 py-2 border-[#E8D7ED] text-[#2B063F] bg-[#FDF9FF] focus:bg-[#FFF5FA]"
                         />
 
                     </div>
 
                     {state.success && (
-                        <div className="mb-4 rounded-xl border border-green-700 bg-green-500/10 p-3 text-green-400">
+                        <div className="mb-4 rounded-xl border border-[#22A06B]/40 bg-[#22A06B]/10 p-3 text-[#22A06B]">
                             ✓ {state.success}
                         </div>
                     )}
 
                     {state.error && (
-                        <div className="mb-4 rounded-lg border border-red-700 bg-red-500/10 p-3 text-red-400">
+                        <div className="mb-4 rounded-lg border border-[#DC4C5A]/40 bg-[#DC4C5A]/10 p-3 text-[#DC4C5A]">
                             {state.error}
                         </div>
                     )}
-                    <div className="justify-end flex border-t border-[#F2D7C1] pt-6 mt-8">
+                    <div className="justify-end flex border-t border-[#E8D7ED] pt-6 mt-8">
                         <button
                             type="submit"
                             disabled={pending}
-                            className="w-full rounded-2xl border border-[#F2D7C1] bg-[#E87522] px-4 py-3 font-semibold text-white transition hover:bg-[#C95717] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
+                            className="w-full rounded-2xl border border-[#E8D7ED] bg-[#6A1B82] px-4 py-3 font-semibold text-white transition hover:bg-[#8E2BA5] disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
                         >
                             {pending ? "Saving..." : "Save Changes"}
                         </button>

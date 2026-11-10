@@ -10,17 +10,17 @@ const  featurs = [
 
 export  default function  ServicesHero(){
     return (
-       <section className="relative overflow-hidden bg-linear-to-br from-[#FFF3E8] to-[#FFE4CC]">
-           <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 pt-10 md:grid-cols-2 md:px-6 md:pt-0">
+       <section className="relative overflow-hidden bg-linear-to-br from-[#F8F0FA] to-[#D8B4E5]">
+           <div className="mx-auto grid w-full max-w-screen-2xl items-center gap-6 px-4 pt-10 md:grid-cols-2 md:px-6 md:pt-0">
            <div className="md:py-12">
-               <p className="tracking-wider uppercase text-[#E87522] text-sm inline-text">Gee Curly Beauty $ Spa</p>
-               <h2 className="text-4xl text-[#3d2a20] font-bold mt-2 font-serif leading-tight md:text-5xl">
+               <p className="tracking-wider uppercase text-[#6A1B82] text-sm inline-text">Gee Curly Beauty $ Spa</p>
+               <h2 className="text-4xl text-[#2B063F] font-bold mt-2 font-serif leading-tight md:text-5xl">
                    Discover our
-                   <span className="block text-5xl text-[#e87522]">
+                   <span className="block text-5xl text-[#6A1B82]">
                        Services
                    </span>
                </h2>
-               <p className="text-sm mt-3 max-w-md text-[#6d5546]">
+               <p className="text-sm mt-3 max-w-md text-[#705A78]">
                    From  stunning  hairstyles to relaxing spa treatments, find the perfect services to enhance your beauty and well-being
                </p>
                
@@ -29,10 +29,10 @@ export  default function  ServicesHero(){
                        <li
                            key={label}
                            className="flex items-center  gap-2">
-                           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#FFE7D2] text-[#E87522]">
+                           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#D8B4E5] text-[#6A1B82]">
                            <Icon className="h-5 w-5"/>
                            </span>
-                           <span className="text-xs leading-tight text-[#5A301E]">
+                           <span className="text-xs leading-tight text-[#705A78]">
                                {label}
                            </span>
                        </li>
@@ -48,7 +48,7 @@ export  default function  ServicesHero(){
                        loading = "eager"
                        sizes = "(min-width:786px) 50vw, 100vw"
                        className="object-cover object-top"/>
-                   <p className="absolute right-4 top-6 -rotate-6 font-serif text-2xl italic text-[#c95717] md:text-3xl">
+                   <p className="absolute right-4 top-6 -rotate-6 font-serif text-2xl italic text-[#8E2BA5] md:text-3xl">
                        Look Good,
                        <br/>
                        Feel Good,
@@ -60,3 +60,4 @@ export  default function  ServicesHero(){
        </section>
     )
 }
+

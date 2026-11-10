@@ -26,14 +26,14 @@ export default  function FeelServices({
         <section className="px-4 py-10 sm:px-6 md:px-12">
             <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-end">
                 <div className="">
-                    <h3 className="text-[#E87522] text-xs font-semibold uppercase tracking-wider">Our services</h3>
+                    <h3 className="text-[#6A1B82] text-xs font-semibold uppercase tracking-wider">Our services</h3>
 
                     <h1 className="mt-1 text-2xl font-bold md:text-3xl">  Featured Services</h1>
-                    <p className="mt-1 text-sm text-[#6D5546]"> Explore our most  popular beauty services, crafted just for you</p>
+                    <p className="mt-1 text-sm text-[#705A78]"> Explore our most  popular beauty services, crafted just for you</p>
                 </div>
                <Link
                    href="/services"
-                   className="text-[#E87522] flex shrink-0 items-center gap-1 text-sm font-semibold hover:underline"
+                   className="text-[#6A1B82] flex shrink-0 items-center gap-1 text-sm font-semibold hover:underline"
                >
                 view All Services
                 <ArrowRight className="w-4 h-4" />
@@ -43,23 +43,23 @@ export default  function FeelServices({
                 {services.map(service => (
                     <article
                     key={service.id}
-                    className="overflow-hidden rounded-2xl bg-white  shadow-md"
+                    className="overflow-hidden rounded-2xl bg-[#FDF9FF]  shadow-md"
                     >
                         <div
-                            className="h-36 bg-[#FFE8D5] bg-cover bg-center"
+                            className="h-36 bg-[#D8B4E5] bg-cover bg-center"
                             style={{backgroundImage: `url(${service.image})`}}
                         />
                         <div className="px-4 pb-4 pt-7 relative">
-                            <span className="absolute -top-5 left-4 flex h-10 w-10 items-center justify-center rounded-full shadow text-white bg-[#E87522]">
+                            <span className="absolute -top-5 left-4 flex h-10 w-10 items-center justify-center rounded-full shadow text-white bg-[#6A1B82]">
                                 <Scissors className="h-5 w-5"/>
                             </span>
                             <h3 className="font-bold">{service.name}</h3>
-                            <p className="text-sm text-[#6D5546]">
+                            <p className="text-sm text-[#705A78]">
                                 From KES {service.price.toLocaleString()}
                             </p>
                             <Link
                                 href={`/bookings?service=${service.id}`}
-                                className="mt-3 flex items-center justify-center gap-1 rounded-full bg-[#E87522] py-2 text-sm font-semibold text-white transition hover:bg-[#C95717]"
+                                className="mt-3 flex items-center justify-center gap-1 rounded-full bg-[#6A1B82] py-2 text-sm font-semibold text-white transition hover:bg-[#8E2BA5]"
                             >
                                 Book Now <ArrowRight className="w-4 h-4" />
                             </Link>

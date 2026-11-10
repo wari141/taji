@@ -14,9 +14,9 @@ export default function Hero({
         <section
             style={{
                 backgroundImage:
-                    `linear-gradient( to right, rgba(48, 30, 18, .82), rgba(48, 30, 18, .12)), url(${image})`,
+                    `linear-gradient( to right, rgba(43, 6, 63, .82), rgba(43, 6, 63, .12)), url(${image})`,
             }}
-            className="relative flex min-h-[420px] bg-contain items-center  bg-[#8F3F18] bg-[position:80%_20%] bg-no-repeat  bg-cover bg-right px-6 py-14 md:px-12"
+            className="relative flex min-h-[420px] bg-contain items-center  bg-[#2B063F] bg-[position:80%_20%] bg-no-repeat  bg-cover bg-right px-6 py-14 md:px-12"
         >
             <div className="max-w-xl text-white">
                 <p className="text-xs font-semibold uppercase tracking-wider">
@@ -24,7 +24,7 @@ export default function Hero({
                 </p>
                 <h1 className="mt-3 text-4xl font-bold leading-tight md:text-6xl">
                     Beauty Begins with {""}
-                    <span className="text-[#D9892B]"> Confidence</span>
+                    <span className="text-[#F2C66D]"> Confidence</span>
                 </h1>
                 <p className="mt-4 max-w-md text-sm leading-relaxed text-white/85 md:text-base">
                     At Gee Curly Beauty &amp; Spa, we bring out the best in you with
@@ -34,7 +34,7 @@ export default function Hero({
                 <div className="mt-6  flex  flex-wrap gap-2">
                     <Link
                         href="/bookings"
-                        className=" flex items-center gap-2 rounded-full  bg-[#E87522] px-5 py-3 text-sm font-semibold  text-white transition  hover:bg-[#C95717]"
+                        className=" flex items-center gap-2 rounded-full  bg-[#D6A84F] px-5 py-3 text-sm font-semibold text-[#2B063F] transition hover:bg-[#F2C66D]"
                     >
                         <CalendarDays className="h-4 w-4"/>
                         Book Appointment
@@ -44,7 +44,7 @@ export default function Hero({
 
                     <Link
                         href="/services"
-                        className="  border border-white/70 rounded-full   px-5 py-3 text-sm font-semibold  text-white transition  hover:bg-white/10"
+                        className="  border border-white/70 rounded-full   px-5 py-3 text-sm font-semibold  text-white transition  hover:bg-[#FDF9FF]/10"
                     >
                        Explore Services
 

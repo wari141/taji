@@ -14,7 +14,7 @@ export default async function HomePage() {
     if (!session?.user) redirect("/login");
 
     return (
-        <div className="mx-auto max-w-7xl overflow-hidden bg-[#FFF3E8] text-[#8F3F18]">
+        <div className="mx-auto w-full max-w-screen-2xl overflow-hidden bg-[#FDF9FF] text-[#2B063F]">
             <Hero firstName={session?.user?.name?.trim().split(/\s+/)[0]} />
             <FeaturedServices />
             <SpecialOffers />
@@ -28,3 +28,4 @@ export default async function HomePage() {
         </div>
     );
 }
+

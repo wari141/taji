@@ -25,6 +25,7 @@ model User {
 
   accounts Account[]
   sessions Session[]
+  bookings Booking[]
   
 }
 
@@ -69,4 +70,24 @@ model PasswordResetToken{
   expiresAt DateTime
   createdAt DateTime @default(now())
 
+}
+model Booking {
+  id              String   @id @default(cuid())
+  userId          String?
+  serviceId       String
+  serviceTitle    String
+  servicePrice    Int
+  serviceDuration String
+  appointmentAt   DateTime
+  customerName    String
+  customerEmail   String
+  customerPhone   String
+  status          String   @default("CONFIRMED")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([appointmentAt])
 }

@@ -51,7 +51,7 @@ export default function Navbar({ user }: NavbarProps) {
             .toUpperCase() || "G";
 
     return (
-        <header className="border-b border-line bg-cream px-3 py-4 md:px-6">
+        <header className="border-b border-[#4A0D62] bg-[#2B063F] px-3 py-4 md:px-6">
             <div className="mx-auto flex max-w-7xl items-center justify-between">
                 {/* Brand + mobile menu button */}
                 <div className="flex items-center gap-3">
@@ -59,12 +59,12 @@ export default function Navbar({ user }: NavbarProps) {
                         type="button"
                         onClick={() => setSidebarOpen(true)}
                         aria-label="Open navigation menu"
-                        className="text-ink md:hidden"
+                        className="text-[#FDF9FF] md:hidden"
                     >
                         <Menu className="h-6 w-6" />
                     </button>
 
-                    <span className="text-sm font-bold uppercase tracking-wide text-ink">
+                    <span className="text-sm font-bold uppercase tracking-wide text-[#FDF9FF]">
                         Gee Curly <br />
                         Beauty &amp; Spa
                     </span>
@@ -78,8 +78,8 @@ export default function Navbar({ user }: NavbarProps) {
                             href={link.href}
                             className={`transition-colors ${
                                 pathname === link.href
-                                    ? "border-b-2 border-brand pb-1 font-bold text-brand"
-                                    : "text-ink-soft hover:text-brand"
+                                    ? "border-b-2 border-[#F2C66D] pb-1 font-bold text-[#F2C66D]"
+                                    : "text-[#D8B4E5] hover:text-[#F2C66D]"
                             }`}
                         >
                             {link.name}
@@ -90,18 +90,18 @@ export default function Navbar({ user }: NavbarProps) {
                 {/* Right side: search, bell, avatar */}
                 <div className="flex items-center gap-4">
                     <div className="relative hidden xl:block">
-                        <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#8C7160]" />
+                        <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#D8B4E5]" />
                         <input
                             placeholder="Search services..."
                             type="text"
-                            className="w-56 rounded-full border border-line bg-transparent py-2 pl-9 text-sm text-ink outline-none placeholder:text-[#8C7160] focus:border-brand"
+                            className="w-56 rounded-full border border-[#705A78] bg-white/10 py-2 pl-9 text-sm text-[#FDF9FF] outline-none placeholder:text-[#D8B4E5] focus:border-[#F2C66D]"
                         />
                     </div>
 
                     <button
                         type="button"
                         aria-label="Notifications"
-                        className="relative text-ink"
+                        className="relative text-[#FDF9FF]"
                     >
                         <Bell className="h-6 w-6" />
                         {unreadCount > 0 && (
@@ -138,7 +138,7 @@ export default function Navbar({ user }: NavbarProps) {
                                     className="fixed inset-0 z-30"
                                     onClick={() => setProfileOpen(false)}
                                 />
-                                <div className="absolute right-0 z-40 mt-3 w-64 overflow-hidden rounded-2xl border border-line bg-white shadow-xl">
+                                <div className="absolute right-0 z-40 mt-3 w-64 overflow-hidden rounded-2xl border border-line bg-[#FDF9FF] shadow-xl">
                                     <div className="border-b border-line p-4">
                                         <p className="font-semibold text-ink">
                                             {user?.name || "Guest"}
@@ -151,7 +151,7 @@ export default function Navbar({ user }: NavbarProps) {
                                     <Link
                                         href="/profile"
                                         onClick={() => setProfileOpen(false)}
-                                        className="flex items-center gap-3 px-4 py-3 text-ink hover:bg-[#FFF0E2]"
+                                        className="flex items-center gap-3 px-4 py-3 text-ink hover:bg-[#FFF5FA]"
                                     >
                                         <User className="h-4 w-4" />
                                         <span>Profile Settings</span>
@@ -161,7 +161,7 @@ export default function Navbar({ user }: NavbarProps) {
                                         <form action={logoutUser}>
                                             <button
                                                 type="submit"
-                                                className="flex w-full items-center gap-3 rounded-lg px-3 py-3 text-red-500 hover:bg-red-500/10"
+                                                className="flex w-full items-center gap-3 rounded-lg px-3 py-3 text-[#DC4C5A] hover:bg-[#DC4C5A]/10"
                                             >
                                                 <LogOut className="h-4 w-4" />
                                                 Logout
@@ -182,14 +182,14 @@ export default function Navbar({ user }: NavbarProps) {
                         className="fixed inset-0 z-40 bg-ink/45 backdrop-blur-sm"
                         onClick={() => setSidebarOpen(false)}
                     />
-                    <div className="fixed inset-y-0 left-0 z-50 flex h-dvh w-[min(20rem,88vw)] max-w-full flex-col overflow-y-auto border-r border-line bg-white shadow-2xl">
-                        <div className="flex items-center justify-end border-b border-line p-4 pr-5">
+                    <div className="fixed inset-y-0 left-0 z-50 flex h-dvh w-[min(20rem,88vw)] max-w-full flex-col overflow-y-auto border-r border-[#6A1B82] bg-[#4A0D62] text-[#FDF9FF] shadow-2xl">
+                        <div className="flex items-center justify-end border-b border-[#6A1B82] p-4 pr-5">
                             <button
                                 type="button"
                                 onClick={() => setSidebarOpen(false)}
                                 aria-label="Close navigation menu"
                             >
-                                <X className="h-5 w-5 text-brand" />
+                                <X className="h-5 w-5 text-[#F2C66D]" />
                             </button>
                         </div>
 
@@ -202,10 +202,10 @@ export default function Navbar({ user }: NavbarProps) {
                                         key={link.href}
                                         href={link.href}
                                         onClick={() => setSidebarOpen(false)}
-                                        className={`block rounded-xl border px-4 py-3 transition hover:bg-[#FFF0E2] ${
+                                        className={`block rounded-xl border px-4 py-3 transition hover:bg-[#6A1B82] ${
                                             active
-                                                ? "border-brand bg-[#FFF0E2] font-semibold text-brand"
-                                                : "border-line text-ink"
+                                                ? "border-[#F2C66D] bg-[#6A1B82] font-semibold text-white"
+                                                : "border-[#B56BC5] text-[#FDF9FF]"
                                         }`}
                                     >
                                         <div className="flex items-center gap-2">
@@ -221,7 +221,7 @@ export default function Navbar({ user }: NavbarProps) {
                             <Link
                                 href="/profile"
                                 onClick={() => setSidebarOpen(false)}
-                                className="flex items-center gap-3 rounded-lg border border-line px-4 py-3 text-ink hover:bg-[#FFF0E2]"
+                                className="flex items-center gap-3 rounded-lg border border-[#B56BC5] px-4 py-3 text-[#FDF9FF] hover:bg-[#6A1B82]"
                             >
                                 <User className="h-4 w-4" />
                                 Profile
@@ -230,7 +230,7 @@ export default function Navbar({ user }: NavbarProps) {
                             <form action={logoutUser}>
                                 <button
                                     type="submit"
-                                    className="flex w-full items-center gap-3 rounded-lg border border-line px-4 py-3 text-red-500 hover:bg-red-500/10"
+                                    className="flex w-full items-center gap-3 rounded-lg border border-line px-4 py-3 text-[#DC4C5A] hover:bg-[#DC4C5A]/10"
                                 >
                                     <LogOut className="h-4 w-4" />
                                     Logout

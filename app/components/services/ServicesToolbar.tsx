@@ -27,19 +27,19 @@ export default  function ServicesToolbar({
     onSortChange,
                                          }:Props){
     return (
-        <div className="mb-6 flex flex-col gap-3 rounded-2xl border border-[#F2D7C1] bg-white p-3 lg:flex-row lg:items-center">
+        <div className="mb-6 flex flex-col gap-3 rounded-2xl border border-[#E8D7ED] bg-[#FDF9FF] p-3 lg:flex-row lg:items-center">
             <div className="relative flex-1">
                 <label htmlFor="service-search" className="sr-only">
                     Search for a service
                 </label>
-                <Search className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#6d5546]"/>
+                <Search className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-[#705A78]"/>
                 <input
                     id="service-search"
                     value={query}
                     placeholder="Search for a service..."
                     onChange={(e) => onQueryChange(e.target.value)}
                     type="text"
-                    className="w-full rounded-xl border border-[#F2D7C1] bg-[#FFF8F2] py-2.5 pl-10 pr-4 text-[#3d2a20] outline-none placeholder:text-[#6d5546] focus:border-[#c95717]"/>
+                    className="w-full rounded-xl border border-[#E8D7ED] bg-[#FDF9FF] py-2.5 pl-10 pr-4 text-[#2B063F] outline-none placeholder:text-[#705A78] focus:border-[#8E2BA5]"/>
             </div>
             <div className="flex flex-wrap gap-2">
                 {pills.map(pill => {
@@ -52,8 +52,8 @@ export default  function ServicesToolbar({
                             onClick={() => onCategoryChange(pill.id)}
                             className={`rounded-full px-5 py-2 text-sm font-medium transition ${
                                 active
-                                ? "bg-[#c95717] text-white"
-                                    : "border border-[#f2d7c1] bg-white text-[#3d2a20] hover:border-[#c95717]"
+                                ? "bg-[#6A1B82] text-white"
+                                    : "border border-[#E8D7ED] bg-[#FDF9FF] text-[#2B063F] hover:border-[#8E2BA5]"
                             }`
                             }>
                             {pill.name}
@@ -70,14 +70,14 @@ export default  function ServicesToolbar({
                     id="service-sort"
                     value={sort}
                     onChange={(e) => onSortChange(e.target.value as SortOption)}
-                    className="w-full appearance-none rounded-xl border border-[#F2D7C1] bg-white py-2.5 pl-4 pr-10 text-sm text-[#3D2A20] outline-none focus:border-[#C95717] lg:w-auto"
+                    className="w-full appearance-none rounded-xl border border-[#E8D7ED] bg-[#FDF9FF] py-2.5 pl-4 pr-10 text-sm text-[#2B063F] outline-none focus:border-[#8E2BA5] lg:w-auto"
                 >
                     <option value="popular">Sort by: Popular</option>
                     <option value="price-asc">Price: Low to High</option>
                     <option value="price-desc">Price: High to Low</option>
                     <option value="name">Name: A to Z</option>
                 </select>
-                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#6D5546]" />
+                <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#705A78]" />
             </div>
         </div>
 

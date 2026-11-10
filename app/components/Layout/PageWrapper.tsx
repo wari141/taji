@@ -17,7 +17,7 @@ export default function PageWrapper({
                                         user,
                                     }: PageWrapperProps) {
     return (
-        <div className="flex min-h-[100svh] flex-col bg-[#FFF3E8]">
+        <div className="flex min-h-[100svh] flex-col bg-[#F8F0FA]">
             <Navbar user={user}/>
 
             <main className="min-w-0 flex-1">

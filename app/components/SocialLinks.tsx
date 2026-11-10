@@ -36,7 +36,7 @@ export default function SocialLinks() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Follow us on ${name}`}
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#F2D7C1] text-[#6D5546] transition hover:border-[#E87522] hover:text-[#E87522]"
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-[#E8D7ED] text-[#705A78] transition hover:border-[#6A1B82] hover:text-[#6A1B82]"
                 >
 
                 </a>
@@ -46,7 +46,7 @@ export default function SocialLinks() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Follow us on TikTok"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#F2D7C1] text-[#6D5546] transition hover:border-[#E87522] hover:text-[#E87522]"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#E8D7ED] text-[#705A78] transition hover:border-[#6A1B82] hover:text-[#6A1B82]"
             >
             <TikTokIcon className="h-4 w-4" />
         </a>

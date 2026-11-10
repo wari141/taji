@@ -5,6 +5,7 @@ export type Service = {
     title: string;
     description: string;
     category: CategoryId;
+    categoryLabel: string;
     style?: string;
     image: string;
     video?: string;
@@ -29,6 +30,7 @@ export const services: Service[] = [
         description:
             "Lightweight, natural-looking braids that last longer and protect your hair.",
         category: "hair",
+        categoryLabel: "Hair.",
         style: "Knotless Braids",
         image: PLACEHOLDER,
         mediaType: "photo",
@@ -40,6 +42,7 @@ export const services: Service[] = [
         title: "Hair Styling",
         description: "Elegant style for everyday wear and special occasions.",
         category: "hair",
+        categoryLabel: "hair",
         style: "Styling",
         image: PLACEHOLDER,
         mediaType: "video",
@@ -51,6 +54,7 @@ export const services: Service[] = [
         title: "Nail Art",
         description: "Beautiful, trendy and long-lasting nail designs.",
         category: "nails",
+        categoryLabel: "nails",
         image: PLACEHOLDER,
         mediaType: "photo",
         duration: "3-5 hours",
@@ -61,6 +65,7 @@ export const services: Service[] = [
         title: "Facial Treatment",
         description: "Rejuvenate your skin with our premium facial treatment.",
         category: "spa",
+        categoryLabel: "spa",
         image: PLACEHOLDER,
         mediaType: "photo",
         duration: "2 hours",
@@ -71,6 +76,7 @@ export const services: Service[] = [
         title: "Waist-length Marley",
         description: "Long, full Marley braids with a soft natural finish.",
         category: "hair",
+        categoryLabel: "hair",
         style: "Marley Braids",
         image: PLACEHOLDER,
         mediaType: "photo",
@@ -82,6 +88,7 @@ export const services: Service[] = [
         title: "Coco Twist",
         description: "Soft, bouncy twists with a coconut-curl finish.",
         category: "hair",
+        categoryLabel:"hair",
         style: "Coco Twist",
         image: PLACEHOLDER,
         mediaType: "photo",
@@ -93,6 +100,7 @@ export const services: Service[] = [
         title: "Makeup Application",
         description: "Flawless looks for every occasion, from natural to glam.",
         category: "makeup",
+        categoryLabel: "makeup",
         image: PLACEHOLDER,
         mediaType: "video",
         duration: "1-2 hours",
@@ -103,6 +111,7 @@ export const services: Service[] = [
         title: "Hair Coloring",
         description: "Vibrant, long-lasting colour for a fresh new look.",
         category: "hair",
+        categoryLabel: "hair",
         style: "Coloring",
         image: PLACEHOLDER,
         mediaType: "photo",
@@ -114,6 +123,7 @@ export const services: Service[] = [
         title: "Relaxing Massage",
         description: "Relieves stress and restores your body's balance.",
         category: "spa",
+        categoryLabel: "spa",
         image: PLACEHOLDER,
         mediaType: "photo",
         duration: "1 hour",
@@ -124,53 +134,13 @@ export const services: Service[] = [
         title: "Bridal Package",
         description: "Complete beauty package for your special day.",
         category: "makeup",
+        categoryLabel: "makeup",
         image: PLACEHOLDER,
         mediaType: "photo",
         duration: "3-6 hours",
         price: 5000,
     },
-    {
-        id: "hair-treatment",
-        title: "Hair Treatment",
-        description: "Nourish, strengthen and revive your hair.",
-        category: "hair",
-        style: "Treatments",
-        image: PLACEHOLDER,
-        mediaType: "video",
-        duration: "1-2 hours",
-        price: 1800,
-    },
-    {
-        id: "gel-nails",
-        title: "Gel Nails",
-        description: "Long-lasting, glossy and beautiful nails.",
-        category: "nails",
-        image: PLACEHOLDER,
-        mediaType: "photo",
-        duration: "1 hour",
-        price: 1500,
-    },
-    {
-        id: "body-scrub",
-        title: "Body Scrub",
-        description: "Exfoliate, refresh and leave your skin glowing.",
-        category: "spa",
-        image: PLACEHOLDER,
-        mediaType: "photo",
-        duration: "1 hour",
-        price: 2000,
-    },
-    {
-        id: "locs-styling",
-        title: "Locs Styling",
-        description: "Stylish, neat and natural locs for every personality.",
-        category: "hair",
-        style: "Locs",
-        image: PLACEHOLDER,
-        mediaType: "video",
-        duration: "2-4 hours",
-        price: 2500,
-    },
+
 ];
 
 
