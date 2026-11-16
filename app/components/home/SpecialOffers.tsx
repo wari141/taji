@@ -43,7 +43,7 @@ export  default  function SpecialOffers({
 }){
     if (offers.length === 0) return null;
      return (
-         <section className="px-6 pb-10 md:px-12">
+         <section className="px-6 rounded-2xl mt-2 pb-10 md:px-12">
              <div className="">
                  <p className="text-xs font-semibold uppercase tracking-wider text-[#6A1B82]">
                      Limited time

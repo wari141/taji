@@ -16,9 +16,9 @@ export default function Hero({
                 backgroundImage:
                     `linear-gradient( to right, rgba(43, 6, 63, .82), rgba(43, 6, 63, .12)), url(${image})`,
             }}
-            className="relative flex min-h-[420px] bg-contain items-center  bg-[#2B063F] bg-[position:80%_20%] bg-no-repeat  bg-cover bg-right px-6 py-14 md:px-12"
+            className="relative mt-2 rounded-2xl flex min-h-[420px] bg-contain items-center  bg-[#2B063F] bg-[position:80%_20%] bg-no-repeat  bg-cover bg-right px-6 py-14 md:px-12"
         >
-            <div className="max-w-xl text-white">
+            <div className="max-w-xl  text-white">
                 <p className="text-xs font-semibold uppercase tracking-wider">
                     welcome back {firstName ? `, ${firstName}` : ""}
                 </p>

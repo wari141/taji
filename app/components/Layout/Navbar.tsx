@@ -31,8 +31,8 @@ const navLinks = [
     { name: "Home", href: "/home", Icon: House },
     { name: "Services", href: "/services", Icon: Scissors },
     { name: "My bookings", href: "/bookings", Icon: CalendarIcon },
-    { name: "Gallery", href: "/gallery", Icon: ImageIcon },
-    { name: "Booking History", href: "/booking-history", Icon: Clock3 },
+    { name: "Help & Support", href: "/help", Icon: ImageIcon },
+    { name: "Booking History", href: "/bookingHistory", Icon: Clock3 },
 ];
 
 export default function Navbar({ user }: NavbarProps) {

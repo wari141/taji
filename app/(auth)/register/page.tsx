@@ -12,7 +12,7 @@ export default function RegisterPage() {
 
     return (
         <div
-            className="flex min-h-[100svh] items-start justify-center bg-[#F8F0FA] px-4 py-6 sm:items-center sm:px-6 sm:py-10 lg:px-12">
+            className="flex min-h-[100svh] items-start justify-center bg-transparent px-4 py-6 sm:items-center sm:px-6 sm:py-10 lg:px-12">
             <form action={formAction} className="w-full max-w-md space-y-4 rounded-2xl border border-[#D8B4E5] bg-[#D8B4E5] p-5 shadow-xl sm:p-7">
                 <div className="mb-8">
                     <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[#6A1B82]">

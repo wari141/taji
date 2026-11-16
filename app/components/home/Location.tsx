@@ -12,7 +12,7 @@ export default function Location({
     const query = encodeURIComponent(`Gee Curly Beauty & spa, ${address}`);
     
     return (
-        <section className="px-6 pb-10 md:px-12">
+        <section className="px-6 mt-2 rounded-2xl pb-10 md:px-12">
             <div className="grid overflow-hidden rounded-2xl bg-[#FDF9FF] shadow-md md:grid-cols-2">
                 <div className="flex flex-col justify-center p-6 md:p-8">
                     <p className="text-xs font-semibold uppercase tracking-wider text-[#6A1B82] ">

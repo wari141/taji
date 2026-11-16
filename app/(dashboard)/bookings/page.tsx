@@ -21,10 +21,9 @@ export default async function Bookings() {
         : null;
 
     return (
-        <div className="mx-auto w-full max-w-screen-2xl bg-[#FFF5FA] px-4 py-8 md:px-6 md:py-10">
+        <div className="mx-auto w-full max-w-screen-2xl bg-transparent px-4 py-8 md:px-6 md:py-10">
             <BookingsHero />
             <BookingFlow user={user} />
         </div>
     );
 }
-

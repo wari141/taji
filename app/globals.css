@@ -11,7 +11,7 @@
   --primary-light: #B56BC5;
 
   --lavender: #D8B4E5;
-  --lavender-bg: #F8F0FA;
+  --lavender-bg: #F3EDF8;
   --soft-white: #FDF9FF;
 
   --pink: #D96BA5;
@@ -35,9 +35,10 @@
   --error: #DC4C5A;
   --info: #5686D8;
 
-  --background: var(--lavender-bg);
-  --foreground: var(--text-primary);
+  --background: #180522;
+  --foreground: #FDF9FF;
   --background-soft: var(--blush-bg);
+  --page-background: linear-gradient(135deg, #180522 0%, #301044 45%, #48165B 75%, #25102F 100%);
 }
 
 @theme inline {
@@ -48,11 +49,12 @@
 }
 
 * { box-sizing: border-box; }
-html { min-width: 320px; background: var(--background); }
+html { min-width: 320px; background: #180522; }
+.app-page-background { background: var(--page-background); }
 body {
   min-height: 100%;
   overflow-x: hidden;
-  background: var(--background);
+  background: var(--page-background) fixed;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
